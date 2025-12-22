@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
@@ -31,8 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             navbar.style.boxShadow = '0 1px 0 rgba(0, 0, 0, 0.1)';
         }
-
-        lastScroll = currentScroll;
     });
 
     // Smooth scroll for anchor links
