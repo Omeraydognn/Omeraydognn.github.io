@@ -15,7 +15,18 @@ const observer = new IntersectionObserver((entries) => {
 // Observe all elements with reveal class
 document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.reveal');
+    
     revealElements.forEach(element => {
+        // Check if element is in hero section or already in viewport
+        const rect = element.getBoundingClientRect();
+        const isInViewport = rect.top < window.innerHeight && rect.bottom >= 0;
+        
+        // Immediately activate hero elements and elements in viewport
+        if (element.closest('.hero') || isInViewport) {
+            element.classList.add('active');
+        }
+        
+        // Observe for scroll animations
         observer.observe(element);
     });
 
