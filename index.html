@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omeraydognn Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #ffffff;
+            --accent: #007AFF; 
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --terminal-bg: #121212;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .gradient-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #151515 0%, #0a0a0a 100%);
+            z-index: -1;
+        }
+
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 6rem 2rem; text-align: center; }
+
+        /* Navigasyon */
+        nav {
+            position: fixed; top: 2rem; display: flex; align-items: center; gap: 1.5rem; z-index: 100;
+            background: rgba(10, 10, 10, 0.8); padding: 0.8rem 1.5rem; border-radius: 50px;
+            backdrop-filter: blur(15px); border: 1px solid var(--border); left: 50%; transform: translateX(-50%);
+        }
+        nav a { text-decoration: none; color: var(--text); font-size: 0.85rem; transition: 0.3s; opacity: 0.7; }
+        nav a:hover { opacity: 1; color: var(--accent); }
+        .nav-github { background: var(--accent); padding: 0.5rem 1.2rem !important; border-radius: 20px; color: white !important; font-weight: 700 !important; box-shadow: 0 0 20px rgba(0, 122, 255, 0.3); opacity: 1 !important; }
+
+        /* Hero */
+        .hero { min-height: 80vh !important; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 700; letter-spacing: -3px; }
+        .highlight { color: var(--accent); }
+        .typewriter { font-size: 1.5rem; opacity: 0.6; height: 2rem; font-weight: 300; margin-top: 10px; }
+
+        /* --- TERMINAL KUTUSU --- */
+        .terminal-container {
+            width: 100%;
+            max-width: 700px;
+            background: var(--terminal-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            overflow: hidden;
+            margin-top: 3rem;
+            font-family: 'Fira Code', monospace;
+            text-align: left;
+        }
+
+        .terminal-header {
+            background: #1e1e1e;
+            padding: 10px 15px;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+
+        .terminal-body {
+            padding: 20px;
+            font-size: 0.95rem;
+            color: #dcdcdc;
+            min-height: 200px;
+        }
+
+        .command { color: #a6e22e; }
+        .property { color: var(--accent); }
+        .cursor { display: inline-block; width: 8px; height: 18px; background: var(--accent); margin-left: 5px; animation: blink 1s infinite; vertical-align: middle; }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Stats */
+        .stats { min-height: auto !important; padding: 4rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); width: 100%; }
+        .stats-container { display: flex; justify-content: space-around; width: 100%; max-width: 1100px; margin: 0 auto; }
+        .stat-item h2 { font-size: 3rem; font-weight: 700; }
+        .stat-item p { font-size: 0.7rem; letter-spacing: 2px; opacity: 0.4; text-transform: uppercase; }
+
+        /* Projects */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1100px; width: 100%; margin-top: 3rem; }
+        .card { background: var(--glass); padding: 2rem; border-radius: 20px; border: 1px solid var(--border); transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1); backdrop-filter: blur(10px); text-align: left; position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-10px) scale(1.02); border-color: var(--accent); background: rgba(0, 122, 255, 0.02); }
+
+        /* Experience */
+        .exp-section { width: 100%; max-width: 1100px; margin-top: 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        .exp-card {
+            background: var(--glass); padding: 2.5rem; border-radius: 24px; border: 1px solid var(--border);
+            text-align: left; transition: 0.4s; position: relative; display: flex; flex-direction: column; gap: 10px;
+        }
+        .exp-card:hover { border-color: var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .exp-badge { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--accent); padding: 4px 12px; border-radius: 12px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .exp-badge.past { background: #333; }
+        .exp-card h3 { font-size: 1.4rem; color: #fff; }
+        .exp-card h4 { font-size: 1rem; color: var(--accent); font-weight: 400; opacity: 0.9; }
+        .exp-card .company-link { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .exp-card .company-link:hover { border-bottom-color: var(--accent); }
+        .exp-card p { font-size: 0.9rem; opacity: 0.5; margin-top: 5px; }
+
+        /* Social */
+        .social-grid { display: flex; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap; justify-content: center; }
+        .social-card {
+            background: var(--glass); padding: 1.5rem 2.5rem; border-radius: 20px; text-decoration: none; color: white;
+            border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 10px; transition: 0.3s;
+        }
+        .social-card i { font-size: 2rem; color: var(--accent); }
+        .social-card:hover { background: var(--accent); border-color: var(--accent); }
+        .social-card:hover i { color: white; }
+
+        footer { padding: 4rem; opacity: 0.4; font-size: 0.8rem; border-top: 1px solid var(--border); width: 100%; text-align: center; }
+
+        @media (max-width: 768px) {
+            .stats-container { flex-wrap: wrap; }
+            .stat-item { flex: 0 0 50%; margin-bottom: 2rem; }
+            nav { width: 95%; gap: 0.6rem; font-size: 0.7rem; }
+            .hero h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gradient-bg"></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#work">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">Contact</a>
+        <a href="https://github.com/omeraydognn" target="_blank" class="nav-github"><i class="fab fa-github"></i> GitHub</a>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1 data-aos="zoom-in">I'm <span class="highlight">Ömer Aydoğan</span></h1>
+        <div class="typewriter" id="typed"></div>
+        
+        <div class="terminal-container" data-aos="zoom-in" data-aos-delay="300">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+                <span style="font-size: 0.7rem; opacity: 0.4; margin-left: 10px;">bash — skills.sh</span>
+            </div>
+            <div class="terminal-body">
+                <div><span class="command">omer@portfolio:~$</span> fetch skills --all</div>
+                <div id="terminal-text" style="margin-top: 10px;"></div><span class="cursor"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats" data-aos="fade-up">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h2 class="counter" data-target="3">+0</h2>
+                <p>YRS ON-CHAIN</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter highlight" data-target="13">+0</h2>
+                <p>EVENTS ORGANIZED</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="4">+0</h2>
+                <p>PROJECTS</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="3">+0</h2>
+                <p>HACKATHON</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <h2 data-aos="fade-up" style="font-size: 2.5rem; letter-spacing: -1px;">Featured Projects</h2>
+        <div class="grid">
+            <div class="card" data-aos="fade-up">
+                <h3>Arfhe Wallet</h3>
+                <p>FHE-based web3 crypto wallet with privacy-preserving features.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Nexus</h3>
+                <p>AI-powered application designed for intelligent content analysis.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <h3>MonFHE</h3>
+                <p>Full-stack Ethereum dApp built with Next.js and Hardhat.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <h3>SuiHolar</h3>
+                <p>Decentralized research community on Sui blockchain.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 data-aos="fade-up" style="font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 1rem;">Professional Journey</h2>
+        <div class="exp-section">
+            <div class="exp-card" data-aos="fade-up">
+                <div class="exp-badge">Current</div>
+                <h3>Board Member</h3>
+                <h4><a href="#" class="company-link">Computer Society</a></h4>
+                <p>2025 — Present</p>
+                <p style="opacity: 0.4;">Leading tech initiatives and community growth.</p>
+            </div>
+            <div class="exp-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="exp-badge">Current</div>
+                <h3>Developer</h3>
+                <h4><a href="#" class="company-link">Arfhe Wallet</a></h4>
+                <p>2023 — Present</p>
+                <p style="opacity: 0.4;">Overseeing FHE-based wallet architecture.</p>
+            </div>
+            <div class="exp-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="exp-badge">Current</div>
+                <h3>CTO</h3>
+                <h4><a href="#" class="company-link">ArfDAO</a></h4>
+                <p>2024 - Present</p>
+                <p style="opacity: 0.4;">Driving decentralized governance and development.</p>
+            </div>
+            <div class="exp-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="exp-badge past">Competition</div>
+                <h3>Developer on Arfdev</h3>
+                <h4><a href="#" class="company-link">ArfDao</a></h4>
+                <p>2025 Finals</p>
+                <p style="opacity: 0.4;">Project management and hackathon strategy.</p>
+            </div>
+            <div class="exp-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="exp-badge past">Past Role</div>
+                <h3>Vice President</h3>
+                <h4><a href="#" class="company-link">Blockchain Club</a></h4>
+                <p>2022 — 2025</p>
+                <p style="opacity: 0.4;">Management and organizational leadership.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 data-aos="flip-up" style="font-size: 2.5rem;">Connect</h2>
+        <div class="social-grid" data-aos="fade-up">
+            <a href="https://www.linkedin.com/in/%C3%B6meraydo%C4%9Fan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=androi" target="_blank" class="social-card">
+                <i class="fab fa-linkedin-in"></i><span>LINKEDIN</span>
+            </a>
+            <a href="https://github.com/omeraydognn" target="_blank" class="social-card">
+                <i class="fab fa-github"></i><span>GITHUB</span>
+            </a>
+            <a href="https://www.instagram.com/omer.aydognn?igsh=dTVwcnc3am5iN3N4" target="_blank" class="social-card">
+                <i class="fab fa-instagram"></i><span>INSTAGRAM</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>© 2025 relax. All rights reserved. <br> Built for the Decentralized Web.</footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: false });
+
+        // Hero Typewriter
+        new Typed('#typed', {
+            strings: ['Web3 Developer', 'Full Stack Developer', 'UI/UX Designer'],
+            typeSpeed: 50, backSpeed: 30, loop: true
+        });
+
+        // Terminal Yetenek Efekti
+        new Typed('#terminal-text', {
+            strings: [
+                '<span class="property">Java</span>: public class Skills { ... }',
+                '<span class="property">JavaScript</span>: const skills = ["React", "Web3"];',
+                '<span class="property">Move</span>: public entry fun init_module(...)',
+                '<span class="property">Python</span>: def build_future(): return True',
+                '<span class="property">Node.js</span>: require("innovation");'
+            ],
+            typeSpeed: 40,
+            backSpeed: 20,
+            loop: true,
+            contentType: 'html'
+        });
+
+        const counters = document.querySelectorAll('.counter');
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const update = () => {
+                    const inc = target / 40;
+                    if (count < target) {
+                        count += inc;
+                        counter.innerText = "+" + Math.ceil(count);
+                        setTimeout(update, 35);
+                    } else { counter.innerText = "+" + target; }
+                };
+                update();
+            });
+        };
+
+        let started = false;
+        window.addEventListener('scroll', () => {
+            const statsSec = document.querySelector('.stats');
+            if (window.scrollY > (statsSec.offsetTop - window.innerHeight + 100) && !started) {
+                startCounters(); started = true;
+            }
+        });
+    </script>
+</body>
+</html>
