@@ -395,9 +395,11 @@ footer {
         left: 20px;
     }
 
-    .timeline-content {
+    .timeline-item .timeline-content,
+    .timeline-item:nth-child(odd) .timeline-content {
         width: calc(100% - 60px);
-        margin-left: 60px !important;
+        margin-left: 60px;
+        margin-right: 0;
     }
 
     .timeline-item:nth-child(odd) .timeline-content::before,
