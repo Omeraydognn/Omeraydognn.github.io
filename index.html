@@ -3,158 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ömer Aydoğan - Profesyonel Profil & CV">
-    <title>Ömer Aydoğan - Profil</title>
+    <meta name="description" content="Ömer Aydoğan - Profesyonel Yazılım Geliştirici">
+    <title>Ömer Aydoğan - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <h1 class="logo">ÖA</h1>
-                <ul class="nav-links">
-                    <li><a href="#home">Ana Sayfa</a></li>
-                    <li><a href="#about">Hakkımda</a></li>
-                    <li><a href="#skills">Yetenekler</a></li>
-                    <li><a href="#experience">Deneyim</a></li>
-                    <li><a href="#contact">İletişim</a></li>
-                </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo">ÖA</a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Ana Sayfa</a>
+                <a href="#about" class="nav-link">Hakkımda</a>
+                <a href="#skills" class="nav-link">Yetenekler</a>
+                <a href="#experience" class="nav-link">Deneyim</a>
+                <a href="#contact" class="nav-link">İletişim</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Merhaba, Ben <span class="highlight">Ömer Aydoğan</span></h1>
-                    <p class="hero-subtitle">Software Developer | Problem Solver | Tech Enthusiast</p>
-                    <p class="hero-description">
-                        Yazılım geliştirme ve teknoloji alanında tutkulu bir profesyonel. 
-                        Modern web teknolojileri ve yenilikçi çözümlerle projeler geliştiriyorum.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">İletişime Geç</a>
-                        <a href="#experience" class="btn btn-secondary">Deneyimlerim</a>
-                    </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="reveal">
+                <h1 class="hero-title">
+                    <span class="title-line">Ömer</span>
+                    <span class="title-line">Aydoğan</span>
+                </h1>
+            </div>
+            <div class="reveal delay-1">
+                <p class="hero-subtitle">Software Developer / Problem Solver / Tech Enthusiast</p>
+            </div>
+            <div class="reveal delay-2">
+                <p class="hero-description">
+                    Yazılım geliştirme ve teknoloji konusunda tutkulu bir profesyonel.<br>
+                    Modern çözümlerle etkileyici projeler yaratıyorum.
+                </p>
+            </div>
+            <div class="reveal delay-3">
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">İletişime Geç</a>
+                    <a href="#experience" class="btn btn-secondary">Projelerim</a>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
 
-        <section id="about" class="about">
-            <div class="container">
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">01</span>
                 <h2 class="section-title">Hakkımda</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
-                            Yazılım geliştirme alanında kendimi sürekli geliştiren, yeni teknolojileri 
-                            öğrenmeye ve uygulamaya hevesli bir geliştiriciyim. Problem çözme becerilerim 
-                            ve analitik düşünce yapım sayesinde karmaşık problemlere basit ve etkili 
-                            çözümler üretiyorum.
-                        </p>
-                        <p>
-                            Web teknolojileri, yazılım mimarisi ve modern geliştirme pratikleri 
-                            konularında deneyim sahibiyim. Sürekli öğrenme ve gelişme felsefesiyle 
-                            hareket ediyor, teknolojideki yenilikleri yakından takip ediyorum.
-                        </p>
-                    </div>
-                </div>
             </div>
-        </section>
-
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2 class="section-title">Yetenekler & Teknolojiler</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fas fa-code"></i>
-                        <h3>Frontend Development</h3>
-                        <p>HTML, CSS, JavaScript, React, Vue.js</p>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-server"></i>
-                        <h3>Backend Development</h3>
-                        <p>Node.js, Python, Java, PHP</p>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-database"></i>
-                        <h3>Database</h3>
-                        <p>MySQL, PostgreSQL, MongoDB</p>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-tools"></i>
-                        <h3>Tools & Others</h3>
-                        <p>Git, Docker, AWS, CI/CD</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="experience">
-            <div class="container">
-                <h2 class="section-title">Deneyim & Eğitim</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Software Developer</h3>
-                            <span class="timeline-date">2023 - Günümüz</span>
-                            <p>Modern web uygulamaları geliştirme, API tasarımı ve veritabanı yönetimi.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Eğitim & Sertifikalar</h3>
-                            <span class="timeline-date">Devam Ediyor</span>
-                            <p>Yazılım geliştirme, web teknolojileri ve modern framework'ler üzerine sürekli eğitim.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Projeler</h3>
-                            <span class="timeline-date">Çeşitli</span>
-                            <p>Kişisel ve profesyonel projeler geliştirme, açık kaynak katkıları.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">İletişim</h2>
-                <div class="contact-content">
-                    <p class="contact-text">
-                        Benimle iletişime geçmek isterseniz, aşağıdaki platformlardan ulaşabilirsiniz.
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p class="lead">
+                        Yazılım geliştirme alanında kendimi sürekli geliştiren, yeni teknolojileri 
+                        öğrenmeye ve uygulamaya hevesli bir profesyonelim.
                     </p>
-                    <div class="social-links">
-                        <a href="https://github.com/Omeraydognn" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://linkedin.com/in/omeraydognn" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <!-- TODO: Update with your actual email address -->
-                        <a href="mailto:contact@example.com" class="social-link">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email</span>
-                        </a>
-                        <a href="https://twitter.com/omeraydognn" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                            <span>Twitter</span>
-                        </a>
+                    <p>
+                        Problem çözme becerilerim ve analitik düşünce yapım sayesinde karmaşık 
+                        problemlere basit ve etkili çözümler üretiyorum. Web teknolojileri, 
+                        yazılım mimarisi ve modern geliştirme pratikleri konularında deneyim sahibiyim.
+                    </p>
+                    <p>
+                        Sürekli öğrenme ve gelişme felsefesiyle hareket ediyor, teknolojideki 
+                        yenilikleri yakından takip ediyorum. Her projede mükemmellik ve kaliteyi 
+                        hedefliyorum.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item reveal">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Yıl Deneyim</span>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Proje</span>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Teknoloji</span>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
+    <!-- Skills Section -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Yetenekler & Teknolojiler</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Vue.js</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">PHP</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Redis</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools & DevOps</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Deneyim & Eğitim</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Günümüz</span>
+                        <h3>Software Developer</h3>
+                        <p>Modern web uygulamaları geliştirme, API tasarımı ve veritabanı yönetimi. Mikroservis mimarisi ve cloud teknolojileri ile ölçeklenebilir sistemler inşa ediyorum.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Devam Ediyor</span>
+                        <h3>Eğitim & Sertifikalar</h3>
+                        <p>Yazılım geliştirme, web teknolojileri ve modern framework'ler üzerine sürekli eğitim. Online kurslar, teknik konferanslar ve açık kaynak projelere katkı.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020 - 2023</span>
+                        <h3>Projeler & Açık Kaynak</h3>
+                        <p>Kişisel ve profesyonel projeler geliştirme, açık kaynak katkıları. GitHub'da aktif olarak kod paylaşımı ve topluluk çalışmaları.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">04</span>
+                <h2 class="section-title">İletişim</h2>
+            </div>
+            <div class="contact-content">
+                <p class="contact-intro reveal">
+                    Bir proje üzerinde çalışmak veya benimle iletişime geçmek isterseniz,<br>
+                    aşağıdaki kanallardan ulaşabilirsiniz.
+                </p>
+                <div class="contact-grid">
+                    <a href="https://github.com/Omeraydognn" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/omeraydognn" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:contact@example.com" class="contact-card reveal">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://twitter.com/omeraydognn" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Ömer Aydoğan. Tüm hakları saklıdır.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
